@@ -14,7 +14,7 @@
 
   ![image-20230504133559057](https://gitee.com/zephyrushjnnjh/image-repo/raw/master/img/202305041335090.png)
 
-- 点击`View at this point in the histroy`
+- 点击`View at this point in the history`
 
   ![image-20230504133741137](https://gitee.com/zephyrushjnnjh/image-repo/raw/master/img/202305041337159.png)
 
