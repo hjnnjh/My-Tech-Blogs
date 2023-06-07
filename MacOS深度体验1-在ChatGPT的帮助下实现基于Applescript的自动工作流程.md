@@ -42,7 +42,7 @@ end run
 ## 进一步完善
 上面的Applescript脚本一开始是没啥问题的，但是用着用着就会出现`拒绝访问文件`的报错，一通分析之后发现是因为我的Mac上有两个版本的`Microsoft Edge`，然后上面那个脚本不区分`Microsoft Edge`的版本，用低版本的`Edge`打开PDF文件有概率出现`拒绝访问文件`的问题。
 
-<img src="https://gitee.com/zephyrushjnnjh/image-repo/raw/master/img/202306072121705.png" alt="image-20230607212155642" style="zoom:50%;" />
+![image-202306072121705](https://gitee.com/zephyrushjnnjh/image-repo/raw/master/img/202306072121705.png)
 
 不过Applescript为我们提供了选择最新版本`Edge`打开PDF文件的实现方法，这时候又要靠ChatGPT了🐶
 
