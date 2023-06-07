@@ -1,3 +1,4 @@
+#! https://zhuanlan.zhihu.com/p/635449456
 # MacOS进阶使用第1期：ChatGPT + Applescript实现自动工作流程
 
 ## 为什么要折腾
@@ -102,4 +103,4 @@ mdfind kMDItemCFBundleIdentifier = com.microsoft.edgemac
 
 把Applescript脚本复制过来，保存，然后去键盘快捷键里设置一个快捷键，就大功告成啦！
 
-最后就可以愉快的体验无缝衔接的Zotero $\leftarrow$ Bingchat 体验了，果然懒才是科技进步的动力啊doge!
+最后就可以愉快的体验无缝衔接的Zotero $\rightarrow$ Bingchat 体验了，果然懒才是科技进步的动力啊doge!
