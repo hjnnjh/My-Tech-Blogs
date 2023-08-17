@@ -1,3 +1,4 @@
+#! https://zhuanlan.zhihu.com/p/650675370
 # 在VSCode中配置R语言运行环境
 
 ## 安装VSCode和R
