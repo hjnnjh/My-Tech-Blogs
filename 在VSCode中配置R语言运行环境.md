@@ -103,3 +103,16 @@ dev.off()
 ```shell
 ~/.Rprofile
 ```
+
+这里分享一下我的`~/.Rprofile`，主要为`VSCode R Debugger`的配置：
+
+```shell
+if(Sys.getenv('VSCODE_DEBUG_SESSION')=='1'){
+	Sys.setenv(TERM_PROGRAM='vscode')
+  source(file.path(Sys.getenv(if (.Platform$OS.type == "windows") "USERPROFILE" else "HOME"), ".vscode-R", "init.R"))
+	options(vsc.plot = FALSE)
+	options(vsc.use_httpgd = FALSE)
+}
+```
+
+上述配置允许在使用`VSCode R Debugger`调试R代码时，可以在VSCode内部预览`(View)`断点之前的数据变量（如`dataframe`），同时在调试模式下，禁用`httpgd`，可以在断点前用`print(p)`预览图像。
