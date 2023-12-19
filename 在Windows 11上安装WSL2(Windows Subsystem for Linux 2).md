@@ -14,7 +14,7 @@
 1. 最好是Win11系统；
 2. 最好先把`Windows Terminal`装一下，关于`Windows Terminal`的安装（安装很简单哈，微软商店）和折腾，请参考我的另一篇文章：[Windows终端美化指南](https://github.com/hjnnjh/My-Tech-Blogs/blob/main/Windows终端美化指南.md)；
 
-3. 最好配置一下`Windows Terminal`的代理，有一个很简单的方法，就是在Windows的系统环境变量中添加代理相关的环境变量：
+3. 最好配置一下`Windows Terminal`的代理，有一个很简单的方法，就是在Windows的系统环境变量中添加代理相关的环境变量(端口号记得修改)，这样设置是一定能让终端走代理的，不过这样做有个问题，设置之后我的奥创中心(我是ROG的主板)无法正常识别设备了，找了一晚上原因最后发现罪魁祸首就是添加了这两个环境变量，建议配置完成之后把这两个环境变量删除：
 
    ![image-20231218211118930](https://gitee.com/zephyrushjnnjh/image-repo/raw/master/img/202312182111971.png)
 
@@ -29,7 +29,7 @@ wsl --install
 
 3. 关于安装过程的坑
 
-   - 首先你需要打开主板BIOS中的Hyper V（貌似是虚拟化技术）支持，以华硕主板为例，需要修改图中红圈选项为`enable`，否则后面安装完成打不开`Ubuntu`实例：
+   - 首先你需要打开主板BIOS中的虚拟化技术支持，以华硕主板为例，需要修改图中红圈选项为`enable`，否则后面安装完成打不开`Ubuntu`实例：
 
      ![image-20231218211227570](https://gitee.com/zephyrushjnnjh/image-repo/raw/master/img/202312182112599.png)
 
