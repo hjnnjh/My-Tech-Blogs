@@ -131,9 +131,15 @@ wsl --install
    - 在此目录中创建文件 `wsl-startup.vbs`；
    - 在 `wsl-startup.vbs` 中填充如下内容，其中`<instance_name>`为你的实例名称：
 
-```powershell
-set ws=wscript.CreateObject("wscript.shell")
-ws.run "wsl -d <instance_name>", 0
-```
+    ```powershell
+    set ws=wscript.CreateObject("wscript.shell")
+    ws.run "wsl -d <instance_name>", 0
+    ```
+    当系统启动时（**实测不用登录系统也可ssh连接**），Windows会开启 WSL 实例，它会永久等待输入，不会关闭。
+
+2. 使用小米智能插座实现WSL异常时的远程重启
+
+    - BIOS打开主板的上电自启功能；
+    - 智能插座联网，在手机APP上控制智能插座开关就能实现WSL的重启。
 
 有问题，欢迎大家多多评论或者直接私信问我～
