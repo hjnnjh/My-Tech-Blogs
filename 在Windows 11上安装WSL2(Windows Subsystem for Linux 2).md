@@ -127,19 +127,30 @@ wsl --install
 
 1. 配置 WSL 开机自启
 
-   - WIN+R 运行 `shell:startup` 打开启动目录；
-   - 在此目录中创建文件 `wsl-startup.vbs`；
+   - 在任意目录下(我的目录是`%USERPROFILE%\.shell\`)新建创建文件 `wsl-startup.vbs`；
    - 在 `wsl-startup.vbs` 中填充如下内容，其中`<instance_name>`为你的实例名称：
 
-    ```powershell
-    set ws=wscript.CreateObject("wscript.shell")
-    ws.run "wsl -d <instance_name>", 0
-    ```
-    当系统启动时（**实测不用登录系统也可ssh连接**），Windows会开启 WSL 实例，它会永久等待输入，不会关闭。
+   ```powershell
+   set ws=wscript.CreateObject("wscript.shell")
+   ws.run "wsl -d <instance_name>", 0
+   ```
 
-2. 使用小米智能插座实现WSL异常时的远程重启
+   - 搜索`任务计划程序`，打开该程序；
+   - 在 Windows 中新建一个`基本计划任务`，在`触发器`中选择`启动时`，在`操作`中选择`启动程序`为`wscript.exe`(建议填该这个程序的绝对路径)，在`程序或脚本`中填入`wsl-startup.vbs`的绝对路径，如`"%USERPROFILE%\.shell\wsl-startup.vbs"`(建议加双引号)，然后点击`确定`即可。
+   - 修改这个任务的属性，勾选`不需要用户登录`，这样就可以**在不登录系统的情况下**实现 WSL 实例的开机自启。
+   - **本人实测，当电脑出现异常断电重启时，WSL 实例仍然会启动，但是通过其他方式配置的开机自启，比如将`vbs`脚本加入`shell:startup`目录下，WSL 实例是不会启动的。**
 
-    - BIOS打开主板的上电自启功能；
-    - 智能插座联网，在手机APP上控制智能插座开关就能实现WSL的重启。
+2. 使用远程开机卡实现 WSL 异常时的远程重启（**推荐**）
+
+   - 淘宝上搜一下很多这种接入了米家或者 Apple Homekit 的开机卡，原理是接管了主板的开机跳线；
+
+     ![img](https://gitee.com/zephyrushjnnjh/image-repo/raw/master/img/202312211658933.webp)
+
+   - 这样就可以实现远程操作电脑正常开机，然后再通过上面的方法实现 WSL 的开机自启。
+
+3. 使用小米智能插座实现 WSL 异常时的远程重启（**不推荐，我建议别打电源的主意，不然数据损坏了欲哭无泪**）
+
+   - BIOS 打开主板的上电自启功能；
+   - 智能插座联网，在手机 APP 上控制智能插座开关就能实现 WSL 的重启。
 
 有问题，欢迎大家多多评论或者直接私信问我～
