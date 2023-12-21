@@ -127,7 +127,7 @@ wsl --install
 
 1. 配置 WSL 开机自启
 
-   - 在任意目录下(我的目录是`%USERPROFILE%\.shell\`)新建创建文件 `wsl-startup.vbs`；
+   - 在任意目录下(我的目录是`%USERPROFILE%\.shell\`)新建文件 `wsl-startup.vbs`；
    - 在 `wsl-startup.vbs` 中填充如下内容，其中`<instance_name>`为你的实例名称：
 
    ```powershell
@@ -136,7 +136,7 @@ wsl --install
    ```
 
    - 搜索`任务计划程序`，打开该程序；
-   - 在 Windows 中新建一个`基本计划任务`，在`触发器`中选择`启动时`，在`操作`中选择`启动程序`为`wscript.exe`(建议填该这个程序的绝对路径)，在`程序或脚本`中填入`wsl-startup.vbs`的绝对路径，如`"%USERPROFILE%\.shell\wsl-startup.vbs"`(建议加双引号)，然后点击`确定`即可。
+   - 在 Windows 中新建一个`基本计划任务`，在`触发器`中选择`启动时`，在`操作`中选择`启动程序`为`wscript.exe`，在`程序或脚本`中填入`wscript.exe`的绝对路径，在`添加参数（可选）`中填写`wsl-startup.vbs`的绝对路径`"%USERPROFILE%\.shell\wsl-startup.vbs"`(建议加双引号)，然后点击`确定`即可（之后补图片）。
    - 修改这个任务的属性，勾选`不需要用户登录`，这样就可以**在不登录系统的情况下**实现 WSL 实例的开机自启。
    - **本人实测，当电脑出现异常断电重启时，WSL 实例仍然会启动，但是通过其他方式配置的开机自启，比如将`vbs`脚本加入`shell:startup`目录下，WSL 实例是不会启动的。**
 
