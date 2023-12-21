@@ -17,7 +17,7 @@
 
 3. 最好配置一下`Windows Terminal`的代理，有一个很简单的方法，就是在 Windows 的系统环境变量中添加代理相关的环境变量(端口号记得修改)，这样设置是一定能让终端走代理的，不过这样做有个问题，设置之后我的奥创中心(我是 ROG 的主板)无法正常识别设备了，找了一晚上原因最后发现罪魁祸首就是添加了这两个环境变量，建议配置完成之后把这两个环境变量删除：
 
-   ![image-20231218211118930](https://gitee.com/zephyrushjnnjh/image-repo/raw/master/img/202312182111971.png)
+   ![Windows系统环境变量中新建proxy变量](https://gitee.com/zephyrushjnnjh/image-repo/raw/master/img/202312182111971.png)
 
 ### 安装 WSL
 
@@ -32,7 +32,7 @@ wsl --install
 
    - 首先你需要打开主板 BIOS 中的虚拟化技术支持，以华硕主板为例，需要修改图中红圈选项为`enable`，否则后面安装完成打不开`Ubuntu`实例：
 
-     ![image-20231218211227570](https://gitee.com/zephyrushjnnjh/image-repo/raw/master/img/202312182112599.png)
+     ![修改BIOS选项](https://gitee.com/zephyrushjnnjh/image-repo/raw/master/img/202312182112599.png)
 
    - 安装完成之后首次启动大概率会遇到一个与网络相关的 warning 信息，我们后面会在实例内单独配置代理，所以这个信息我们通过配置文件`%UserProfile%\.wslconfig`将其忽略掉，修改这个文件的内容，然后重启`wsl`：
 
@@ -79,7 +79,7 @@ wsl --install
 
 5. 至此，WSL 安装完成，可以自己配置一下`Windows Terminal`中 WSL 窗口的外观效果如下：
 
-   ![image-20231218204950177](https://gitee.com/zephyrushjnnjh/image-repo/raw/master/img/202312182049202.png)
+   ![安装完成的效果](https://gitee.com/zephyrushjnnjh/image-repo/raw/master/img/202312182049202.png)
 
 ## 配置 ssh 登录、终端美化、深度学习环境的配置
 
@@ -119,9 +119,9 @@ wsl --install
 
 3. 然后就算是基本上配置完成啦，速度的话，我使用`jax`实测了一下，感觉能有原生 Ubuntu 的 90%，附上几张截图：
 
-   ![image-20231218210717916](https://gitee.com/zephyrushjnnjh/image-repo/raw/master/img/202312182107951.png)
+   ![正在跑一个我自己用JAX写的DEMO](https://gitee.com/zephyrushjnnjh/image-repo/raw/master/img/202312182107951.png)
 
-   ![image-20231218210700049](https://gitee.com/zephyrushjnnjh/image-repo/raw/master/img/202312182107078.png)
+   ![美化后的效果与配置，主题是zsh下的p10k](https://gitee.com/zephyrushjnnjh/image-repo/raw/master/img/202312182107078.png)
 
 ## 杂项
 
@@ -144,7 +144,7 @@ wsl --install
 
    - 淘宝上搜一下很多这种接入了米家或者 Apple Homekit 的开机卡，原理是接管了主板的开机跳线；
 
-     ![img](https://gitee.com/zephyrushjnnjh/image-repo/raw/master/img/202312211658933.webp)
+     ![开机卡](https://gitee.com/zephyrushjnnjh/image-repo/raw/master/img/202312211658933.webp)
 
    - 这样就可以实现远程操作电脑正常开机，然后再通过上面的方法实现 WSL 的开机自启。
 
